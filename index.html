@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="We be charging tridents for money here">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Charging Trident Profit Calculator</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header></header>
+			<form action="">
+				<!--Input-->
+				<fieldset>
+					
+					<div class="row">
+						<div class="col halfCol">
+							<label for="number">
+								<h2># Tridents</h2>
+							</label>
+						</div>
+						<div class="col halfCol">
+							<label for="sellPrice">
+								<h2>Sell Price</h2>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col halfCol">
+							<input type="number" value="1" class="cost-input trident-count" name="number" id="number">
+							</label>
+						</div>
+						<div class="col halfCol">
+							<input class="cost-input" type="number" step="1000" value="815000" name="sellPrice" id="sellPrice">
+						</div>
+					</div>
+
+					<div class="row">
+						<button id="button">Reset</button>
+					</div>
+
+				</fieldset>
+				<!--Sell Table-->
+				<fieldset class="table">
+					<div class="row">
+						<div class="col col1"><h2>Components</h2></div>
+						<div class="col col2"><h2>Cost</h2></div>
+						<div class="col col3"><h2>Scaled Value</h2></div>
+					</div>
+				
+					<div class="row">
+						<div class="col col1"><label for="deathsCost">Death Runes</label></div>
+						<div class="col col2 valCol"><input class="cost-input" type="number" step="1" value="180" name="deathCost" id="deathCost"></div>
+						<div class="col col3"><span class="scaledDeaths">9,999,999,999</span></div>
+					</div>
+				
+					<div class="row">
+						<div class="col col1"><label for="chaosCost">Chaos Runes</label></div>
+						<div class="col col2 valCol"><input class="cost-input" type="number" step="1" value="75" name="chaosCost" id="chaosCost"></div>
+						<div class="col col3"><span class="scaledChaos">9,999,999,999</span></div>
+					</div>
+				
+					<div class="row">
+						<div class="col col1"><label for="fireCost">Fire Runs</label></div>
+						<div class="col col2 valCol"><input class="cost-input" type="number" step="1" value="5" name="fireCost" id="fireCost"></div>
+						<div class="col col3"><span class="scaledFires">9,999,999,999</span></div>
+					</div>
+				
+					<div class="row">
+						<div class="col col1"><label for="tridentCost">Uncharged Tridents</label></div>
+						<div class="col col2" valCol><input class="cost-input" type="number" step="250" value="42000" name="tridentCost" id="tridentCost"></div>
+						<div class="col col3"><span class="scaledTridents">9,999,999,999</span></div>
+					</div>
+					<div class="row">
+						<div class="col col1"><label for="tridentCost">Cast Cost (Set)</label></div>
+						<div class="col col2">10</div>
+						<div class="col col3"><span class="scaledCasts">9,999,999,999</span></div>
+					</div>
+
+					<div class="row">
+						<div class="col thirdCol">
+							<h3>Sale Value</h3>
+						</div>
+						<div class="col thirdCol">
+							<h3>Charge</h3>
+						</div>
+						<div class="col thirdCol">
+							<h3>Tax </h3>
+						</div>
+						<div class="col thirdCol">
+							<h3>Profit</h3>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col thirdCol summary profit scaledSales">money</div>
+						<div class="col thirdCol summary loss combinedCost">money</div>
+						<div class="col thirdCol summary loss taxCost"> money</div>
+						<div class="col thirdCol summary profit totalProfit"> money</div>
+					</div>
+					<!--
+					<div class="row">
+						<div class="col col1"><label for="sellPrice">Sell Price</label></div>
+						<div class="col col2"><input class="cost-input" type="number" step="1000" value="815000" name="sellPrice" id="sellPrice"></div>
+						<div class="col col3"><span class="cost">9,999,999,999</span></div>
+					</div>
+					-->
+				</fieldset>
+			</form>
+		<footer></footer>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
