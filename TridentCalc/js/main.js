@@ -1,14 +1,3 @@
-let itemInfo = {};
-fetch("https://prices.runescape.wiki/api/v1/osrs/latest")
-  .then((res) => res.json())
-  .then((data) => {
-    itemInfo.deathRune = data.data[560];
-    itemInfo.chaosRune = data.data[562];
-    itemInfo.fireRune = data.data[554];
-    itemInfo.unchargedTrident = data.data[11908];
-    itemInfo.chargedTrident = data.data[11905];
-  });
-
 class Calculator {
   constructor() {
     this.number = document.querySelector("#number");
