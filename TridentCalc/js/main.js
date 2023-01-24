@@ -1,3 +1,14 @@
+let itemInfo = {};
+fetch("https://prices.runescape.wiki/api/v1/osrs/latest")
+  .then((res) => res.json())
+  .then((data) => {
+    itemInfo.deathRune = data.data[560];
+    itemInfo.chaosRune = data.data[562];
+    itemInfo.fireRune = data.data[554];
+    itemInfo.unchargedTrident = data.data[11908];
+    itemInfo.chargedTrident = data.data[11905];
+  });
+
 class Calculator {
   constructor() {
     this.number = document.querySelector("#number");
@@ -20,37 +31,59 @@ class Calculator {
     this.combinedCost = 0;
     this.saleValue;
   }
+  async setValuesFromGE() {
+    let itemInfo = {};
+    await fetch("https://prices.runescape.wiki/api/v1/osrs/latest")
+      .then((res) => res.json())
+      .then((data) => {
+        itemInfo.deathRune = data.data[560];
+        itemInfo.chaosRune = data.data[562];
+        itemInfo.fireRune = data.data[554];
+        itemInfo.unchargedTrident = data.data[11908];
+        itemInfo.chargedTrident = data.data[11905];
+
+        this.deaths.value = itemInfo.deathRune.low;
+        this.fires.value = itemInfo.fireRune.low;
+        this.chaos.value = itemInfo.chaosRune.low;
+        this.tridents.value = itemInfo.unchargedTrident.low;
+        this.sellValue.value = itemInfo.chargedTrident.high;
+
+        this.renderAll();
+      });
+  }
   renderTridentCost() {
-    console.log("Trident cost render");
     const cost = this.number.value * this.tridents.value;
     this.combinedCost = this.combinedCost + cost;
-    this.tridentsCost.innerHTML = cost.toLocaleString();
+    this.tridentsCost.innerHTML = `${cost.toLocaleString()} (${this.number.value.toLocaleString()})`;
   }
   renderDeathsCost() {
-    console.log("Death cost render");
     const cost = this.number.value * this.deaths.value * 2500;
     this.combinedCost = this.combinedCost + cost;
-    this.deathsCost.innerHTML = cost.toLocaleString();
+    this.deathsCost.innerHTML = `${cost.toLocaleString()} (${(
+      2500 * this.number.value
+    ).toLocaleString()})`;
   }
   renderChaosCost() {
-    console.log("Chaos cost render");
     const cost = this.number.value * this.chaos.value * 2500;
-    console.log(cost);
     this.combinedCost = this.combinedCost + cost;
-    this.chaosCost.innerHTML = cost.toLocaleString();
+    this.chaosCost.innerHTML = `${cost.toLocaleString()} (${(
+      2500 * this.number.value
+    ).toLocaleString()})`;
   }
   renderFiresCost() {
-    console.log("Fires cost render");
     const cost = this.number.value * this.fires.value * 12500;
     this.combinedCost = this.combinedCost + cost;
-    this.fireCost.innerHTML = cost.toLocaleString();
+    this.fireCost.innerHTML = `${cost.toLocaleString()} (${(
+      12500 * this.number.value
+    ).toLocaleString()})`;
   }
   renderCastsCost() {
-    console.log("Casts cost render");
     const CAST_COST = 10;
     const cost = this.number.value * CAST_COST * 2500;
     this.combinedCost = this.combinedCost + cost;
-    this.castsCost.innerHTML = cost.toLocaleString();
+    this.castsCost.innerHTML = `${cost.toLocaleString()} (${(
+      2500 * this.number.value
+    ).toLocaleString()})`;
   }
   renderSaleValue() {
     this.saleValue = this.sellValue.value * this.number.value;
@@ -85,6 +118,7 @@ class Calculator {
 let button = document.querySelector("#button");
 let inputs = document.querySelectorAll("input");
 let calculator = new Calculator();
+calculator.setValuesFromGE();
 calculator.renderAll();
 inputs.forEach((input) =>
   input.addEventListener("input", () => {
@@ -97,4 +131,3 @@ button.addEventListener("click", () => {
   calculator = new Calculator();
   calculator.renderAll();
 });
-//console.log(calculator);
