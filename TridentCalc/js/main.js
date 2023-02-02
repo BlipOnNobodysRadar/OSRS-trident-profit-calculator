@@ -1,3 +1,8 @@
+let button = document.querySelector("#button");
+let inputs = document.querySelectorAll("input");
+let profitThreshold = document.querySelector(".profit-threshold");
+let audioNotification = document.querySelector("#audio-notification");
+
 class Calculator {
   constructor() {
     this.number = document.querySelector("#number");
@@ -102,10 +107,16 @@ class Calculator {
     this.renderTax();
     this.renderCombinedCost();
     this.renderProfit();
+    if (document.querySelector("#notify").checked) {
+      const singleProfit =
+        Math.round(this.saleValue - this.combinedCost - this.tax) /
+        this.number.value;
+      if (singleProfit >= profitThreshold.value) {
+        audioNotification.play();
+      }
+    }
   }
 }
-let button = document.querySelector("#button");
-let inputs = document.querySelectorAll("input");
 let calculator = new Calculator();
 calculator.setValuesFromGE();
 calculator.renderAll();
@@ -115,8 +126,21 @@ inputs.forEach((input) =>
     calculator.renderAll();
   })
 );
-button.addEventListener("click", () => {
+button.addEventListener("click", resetAndRender());
+let autoupdateInterval;
+document.querySelector("#autoupdate").addEventListener("change", () => {
+  if (document.querySelector("#autoupdate").checked) {
+    autoupdateInterval = setInterval(() => {
+      calculator.setValuesFromGE();
+      calculator.renderAll();
+    }, 120000);
+  } else {
+    clearInterval(autoupdateInterval);
+  }
+});
+
+function resetAndRender() {
   document.querySelector("form").reset();
   calculator = new Calculator();
   calculator.renderAll();
-});
+}

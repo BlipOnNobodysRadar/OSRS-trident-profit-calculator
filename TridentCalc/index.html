@@ -15,6 +15,9 @@
 		<header>
 			<h1>Trident Charging Profit Calculator</h1>
 		</header>
+		<audio id="audio-notification">
+			<source src="assets/profitable tridents.mp3" type="audio/mp3">
+		</audio>
 			<form action="">
 				<!--Input-->
 				<fieldset>
@@ -35,7 +38,6 @@
 					<div class="row">
 						<div class="col halfCol">
 							<input type="number" value="1" class="cost-input trident-count" name="number" id="number">
-							</label>
 						</div>
 						<div class="col halfCol">
 							<input class="cost-input" type="number" step="1000" value="815000" name="sellPrice" id="sellPrice">
@@ -43,7 +45,16 @@
 					</div>
 
 					<div class="row">
-						<button id="button">Reset</button>
+						<label for="profit-threshold" class="profit-threshold-label col col3"> Profit threshold: 
+							<input type="number" value="20000" class="profit-threshold" name="profit-threshold" id="profit-threshold">
+						</label>
+						<label for="notify" class="checkbox-label col"> Notify Profit
+							<input type="checkbox" id="notify" name="notify" value="notify" class="checkbox">
+						</label>
+						<label for="autoupdate" class="checkbox-label col"> Auto-update
+							<input type="checkbox" id="autoupdate" name="autoupdate" value="autoupdate" class="checkbox">
+						</label>
+						<button id="button" class="col resetButton">Reset</button>
 					</div>
 
 				</fieldset>
