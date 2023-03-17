@@ -12,7 +12,7 @@ The Runescape Trident Profit Calculator is built using HTML, CSS, and JavaScript
 ## Features
 - Fetches latest item prices from Runescape API
 - Calculates trident costs, taxes, and profits based on user input
-= Automatically updates prices and calculations every two minutes with autoupdate feature
+- Automatically updates prices and calculations every two minutes with autoupdate feature
 - Plays an AI-generated audio notification when the profit per trident is higher than the user-defined threshold
 - Responsive design for different devices
 
