@@ -23,6 +23,7 @@ Some optimizations done:
 - Code efficiency: Instead of creating a new Calculator object every time an input changes, the existing object now updates its internal state and re-renders
 
 Potential future optimizations:
+- Fix the audio notification to not trigger on ever manual value change while checked. (It's just fun to hear it, to be honest. AI is cool.)
 - Implement a more robust error handling system to handle potential edge cases and inform users of any issues that may occur during execution
 - Optimize the rendering process by only updating the parts of the UI that have changed, rather than re-rendering the entire UI each time there is an update (likely through the use of a framework such as React)
 - Implement caching or local storage to store fetched data and reduce the number of API calls, improving performance and reducing the chance of reaching API rate limits
