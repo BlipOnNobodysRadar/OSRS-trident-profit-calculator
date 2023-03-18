@@ -2,7 +2,7 @@
 
 ![Example_Picture](example.png)
 
-A web application to calculate the costs, taxes, and profits of tridents in the game OldSchool Runescape. Users can input values, and the calculator fetches the latest prices from the Runescape API and updates the displayed values accordingly. The application also includes an autoupdate feature and audio notifications based on user-defined profit thresholds.
+A web application to calculate the costs, taxes, and profits of tridents in the game OldSchool Runescape. Users can input values, and the calculator fetches the latest prices from RuneLite's API and updates the displayed values accordingly. The application also includes an autoupdate feature and audio notifications based on user-defined profit thresholds.
 - Live demo here: https://osrs-trident-calc.netlify.app/
 
 ## How It's Made:
