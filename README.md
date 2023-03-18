@@ -1,4 +1,4 @@
-# OldSchool Runescape Trident Profit Calculator
+# OldSchool OldSchool Runescape Trident Profit Calculator
 
 ![Example_Picture](example.png)
 
