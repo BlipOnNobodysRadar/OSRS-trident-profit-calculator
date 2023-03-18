@@ -17,7 +17,15 @@ The Runescape Trident Profit Calculator is built using HTML, CSS, and JavaScript
 - Responsive design for different devices
 
 ## Optimizations
-The application has been optimized for performance, efficiency, and readability. The JavaScript code leverages the Calculator class to modularize the calculations and rendering of results. The CSS uses flexbox for responsive design and easier alignment of elements.
+Some optimizations done:
+- Code readability: Improved variable names and added comments explaining the purpose of each function or block of code
+- Code organization and modularity: Separated concerns by using the Calculator class for calculations and rendering, while the API class handles data fetching
+- Code efficiency: Instead of creating a new Calculator object every time an input changes, the existing object now updates its internal state and re-renders
+
+Potential future optimizations:
+- Implement a more robust error handling system to handle potential edge cases and inform users of any issues that may occur during execution
+- Optimize the rendering process by only updating the parts of the UI that have changed, rather than re-rendering the entire UI each time there is an update (likely through the use of a framework such as React)
+- Implement caching or local storage to store fetched data and reduce the number of API calls, improving performance and reducing the chance of reaching API rate limits
 
 ## Lessons Learned:
 Through the development of this project, several valuable lessons were learned:
@@ -25,3 +33,4 @@ Through the development of this project, several valuable lessons were learned:
 - Building modular code using classes improves maintainability and readability.
 - Leveraging APIs to fetch real-time data enhances the functionality and relevance of applications.
 - Implementing additional features, like audio notifications and autoupdate, can improve user experience.
+- Separating concerns within the code allows for more efficient and organized code.
