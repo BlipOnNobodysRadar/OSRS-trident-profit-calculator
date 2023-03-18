@@ -12,7 +12,7 @@ A web application to calculate the costs, taxes, and profits of tridents in the 
 The OSRS Trident Profit Calculator is built using HTML, CSS, and JavaScript. It features a custom class called Calculator in JavaScript that performs all the necessary calculations and updates the values displayed on the page.
 
 ## Features
-- Fetches latest item prices from Runescape API
+- Fetches latest item prices from RuneLite and OSRS wiki's API
 - Calculates trident costs, taxes, and profits based on user input
 - Automatically updates prices and calculations every two minutes with autoupdate feature
 - Plays an AI-generated audio notification when the profit per trident is higher than the user-defined threshold
